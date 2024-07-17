@@ -16,3 +16,40 @@
 /*
  *= require font-awesome
  */
+
+/* Margin */
+.max-width {
+    max-width: calc(100% - 5.625rem);
+}
+
+/* Fonts */
+
+ @font-face {
+    font-family: "TRY Vesterbro";
+    src: url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.eot");
+    src: url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.svg#TRY Vesterbro") format("svg");
+}
+
+@font-face {
+    font-family: "NeueHaasDisplay-Roman";
+    src: url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.eot");
+    src: url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/cddfddeff0f66d9f03e9df2585ea819e.svg#NeueHaasDisplay-Roman") format("svg");
+}
+
+@font-face {
+    font-family: "TRY Vesterbro Extrabold";
+    src: url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.eot");
+    src: url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.svg#TRY Vesterbro Extrabold")format("svg");
+}
