@@ -1,32 +1,16 @@
-<div id="<%= dom_id entry %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= entry.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date:</strong>
-    <%= entry.date %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Category:</strong>
-    <%= entry.category %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= entry.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Body:</strong>
-    <%= entry.body %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Click:</strong>
-    <%= entry.click %>
-  </p>
-
+<div class="flex flex-col max-width mx-auto mb-[3.5rem] sm:mb-[5.625rem] gap-3 sm:flex-row" id="<%= dom_id entry %>">
+  <section class="bg-gray-500 min-w-[10rem] min-h-[15rem] sm:min-w-[13rem] sm:min-h-[10rem]">
+    a
+  </section>
+  <section>
+    <h3 class="flex items-center font-medium text-sm text-indigo-800 tracking-widest pb-3 gap-2"><%= entry.category.upcase %></h3>
+    <%= link_to entry do %>
+    <h1 class="font-vesterbro-bold font-light leading-6 tracking-tight text-xl pb-3 hover:text-indigo-800"><%= entry.title %></h1>
+    <% end %>
+    <h2 class="tracking-wide pb-3"><%= entry.body %></h2>
+    <span class="flex text-stone-400 text-sm tracking-widest gap-3">
+      <p><%= fa_icon "eye", class: "mr-2"%><%= entry.click %> VIEW</p>
+      <p><%= fa_icon "user", class: "mr-2"%><%= entry.name.upcase %></p>
+    </span>
+  </section>
 </div>

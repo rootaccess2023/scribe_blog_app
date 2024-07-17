@@ -17,6 +17,11 @@
  *= require font-awesome
  */
 
+/* Margin */
+.max-width {
+    max-width: calc(100% - 5.625rem);
+}
+
 /* Fonts */
 
  @font-face {
