@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2024-07-17
+  category: MyString
+  name: MyString
+  body: MyText
+  click: 1
+
+two:
+  title: MyString
+  date: 2024-07-17
+  category: MyString
+  name: MyString
+  body: MyText
+  click: 1
