@@ -16,3 +16,13 @@
 /*
  *= require font-awesome
  */
+
+ @font-face {
+    font-family: "TRY Vesterbro";
+    src: url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.eot");
+    src: url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/3f83bb08f21cdd329224f1ff2a0613c3.svg#TRY Vesterbro") format("svg");
+}
