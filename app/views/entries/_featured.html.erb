@@ -1,0 +1,39 @@
+<div id="<%= dom_id(entry) %>" class="flex flex-col max-width mx-auto mb-[3.5rem] sm:mb-[5.625rem] gap-3 id="<%= dom_id entry %>">
+  <section>
+    <h3 class="flex items-center font-medium text-sm text-indigo-800 tracking-widest pb-3 gap-2"><%= entry.category.upcase %></h3>
+    <%= link_to entry do %>
+    <h1 class="font-vesterbro-bold font-light leading-6 tracking-tight text-xl pb-3 sm:text-4xl hover:text-indigo-800"><%= entry.title %></h1>
+    <% end %>
+  </section>
+  <section class="flex items-center justify-center bg-gray-100 border min-w-[10rem] min-h-[15rem] sm:min-w-[13rem] sm:min-h-[10rem]">
+    <% case entry.category %>
+    <% when 'Health' %>
+        <%= image_tag("health") %>
+    <% when 'Entertainment' %>
+        <%= image_tag("entertainment") %>
+    <% when 'Finance' %>
+        <%= image_tag("finance") %>
+    <% when 'Personal' %>
+        <%= image_tag("personal") %>
+    <% when 'Travel' %>
+        <%= image_tag("travel") %>
+    <% when 'Education' %>
+        <%= image_tag("education") %>
+    <% when 'Food and Drinks' %>
+        <%= image_tag("food") %>
+    <% when 'Lifestyle' %>
+        <%= image_tag("lifestyle") %>
+    <% when 'Technology' %>
+        <%= image_tag("technology") %>
+    <% end %>
+  </section>
+  <section>
+    <h2 class="tracking-wide pb-3"><%= entry.description %></h2>
+    <span class="flex text-stone-400 text-sm tracking-widest gap-3">
+      <p><%= fa_icon "eye", class: "mr-2"%><%= entry.click %> VIEW</p>
+      <p><%= fa_icon "user", class: "mr-2"%><%= entry.name.upcase %></p>
+    </span>
+  </section>
+</div>
+
+

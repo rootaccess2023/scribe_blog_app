@@ -7,10 +7,13 @@
   <% end %>
   <% content_for :title, "Entries" %>
   <div class="max-w-[57rem] mx-auto pt-28 overflow-y-scroll" id="entries">
-    <% @entries.each do |entry| %>
-      <%= render entry %>
-      <p>
-      </p>
+    <% @entries.each_with_index do |entry, index| %>
+      <% if (index - 1) % 4 == 0 %>
+        <%= render partial: 'entries/featured', locals: { entry: entry } %>
+      <% else %>
+        <%= render entry %>
+      <% end %>
+      <p></p>
     <% end %>
   </div>
 </main>
