@@ -1,11 +1,65 @@
-<div class="max-w-[50rem] mx-auto text-white text-center bg-indigo-800 p-12">
-    <h1 class="text-sm tracking-widest pb-8"><%= @entry.category.upcase %></h1>
-    <h1 class="text-5xl font-vesterbro-bold pb-8"><%= @entry.title %></h1>
-    <h1 class="text-2xl opacity-75 pb-8"><%= @entry.body %></h1>
-    <span class="flex justify-center text-sm tracking-widest gap-8">
-        <p><%= fa_icon "user", class: "mr-2" %><%= @entry.name.upcase %></p>
-        <p><%= fa_icon "calendar", class: "mr-2" %><%= @entry.date.strftime("%d %b, %Y").upcase %></p>
-        <p><%= fa_icon "eye", class: "mr-2" %><%= @entry.click %> VIEW</p>
-        <p><%= fa_icon "clock-o", class: "mr-2" %><%= @entry.click %> MINS</p>
-    </span>
+<div class="fixed top-0 w-full bg-white shadow-md z-10">
+    <%= render "partials/home_nav"%>
+</div>
+<div class="">
+    <% case @entry.category %>
+    <% when 'Health' %>
+        <%= image_tag("health") %>
+    <% when 'Entertainment' %>
+        <%= image_tag("entertainment") %>
+    <% when 'Finance' %>
+        <%= image_tag("finance") %>
+    <% when 'Personal' %>
+        <%= image_tag("personal") %>
+    <% when 'Travel' %>
+        <%= image_tag("travel") %>
+    <% when 'Education' %>
+        <%= image_tag("education") %>
+    <% when 'Food and Drinks' %>
+        <%= image_tag("food") %>
+    <% when 'Lifestyle' %>
+        <%= image_tag("lifestyle") %>
+    <% when 'Technology' %>
+        <%= image_tag("technology") %>
+    <% end %>
+</div>
+<div class="lg:relative lg:-top-12 w-full lg:max-w-[50rem] mx-auto transition-all duration-500">
+    <% case @entry.category %>
+    <% when 'Health' %>
+        <% section_color = "bg-red-800" %>
+    <% when 'Entertainment' %>
+        <% section_color = "bg-yellow-800" %>
+    <% when 'Finance' %>
+        <% section_color = "bg-green-800" %>
+    <% when 'Personal' %>
+        <% section_color = "bg-blue-800" %>
+    <% when 'Travel' %>
+        <% section_color = "bg-green-800" %>
+    <% when 'Education' %>
+        <% section_color = "bg-indigo-800" %>
+    <% when 'Food and Drinks' %>
+        <% section_color = "bg-orange-800" %>
+    <% when 'Lifestyle' %>
+        <% section_color = "bg-pink-800" %>
+    <% when 'Technology' %>
+        <% section_color = "bg-gray-800" %>
+    <% end %>
+    <section class="text-white text-center <%= section_color %> p-12 mb-12">
+        <h1 class="text-sm tracking-widest pb-8"><%= @entry.category.upcase %></h1>
+        <h1 class="text-3xl font-vesterbro-bold pb-8 transition-all duration-500 lg:text-5xl"><%= @entry.title %></h1>
+        <h1 class="text-base opacity-75 pb-8 transition-all duration-500 lg:text-2xl"><%= @entry.description %></h1>
+        <span class="flex flex-col justify-center items-center text-sm tracking-widest gap-4 transition-all duration-500 lg:flex-row">
+            <span class="flex gap-2">
+            <p class="mr-2"><%= fa_icon "user", class: "mr-2" %><%= @entry.name.upcase %></p>
+            <p><%= fa_icon "calendar", class: "mr-2" %><%= @entry.date.strftime("%d %b, %Y").upcase %></p>
+            </span>
+            <span class="flex gap-2">
+            <p class="mr-2"><%= fa_icon "eye", class: "mr-2" %><%= @entry.click %> VIEW</p>
+            <p><%= fa_icon "clock-o", class: "mr-2" %><%= @entry.click %> MINS</p>
+            </span>
+        </span>
+    </section>
+    <section class="mx-12">
+        <p class="font-vesterbro text-[16px] transition-all duration-500 lg:text-[21px]"><%= @entry.body %></p>
+    </section>
 </div>
