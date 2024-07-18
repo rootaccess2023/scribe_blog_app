@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'vesterbro': ['"TRY Vesterbro"', 'sans-serif'],
+        'vesterbro': ['"TRY Vesterbro Light"', 'sans-serif'],
         'vesterbro-bold': ['"TRY Vesterbro Extrabold"', 'sans-serif'],
         'haas-display': ['"NeueHaasDisplay-Roman"', 'sans-serif'],
         sans: ['"NeueHaasDisplay-Roman"', ...defaultTheme.fontFamily.sans],
