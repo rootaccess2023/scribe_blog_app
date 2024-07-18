@@ -53,3 +53,45 @@
     url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/d3f0bcb094ad7719361cb513a5209c0e.svg#TRY Vesterbro Extrabold")format("svg");
 }
+
+/* Tooltips */
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 10px;
+    background-color: #192733;
+    border-radius: 5px;
+    padding: 0px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+  .hover-text:hover .tooltip-text {
+    visibility: visible;
+  }
+
+  #top {
+    top: 2.2rem;
+    left: -0.3rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  #top::before {
+    top: 80%;
+    left: 45%;
+  }
+
+  .hover-text {
+    position: relative;
+    display: inline-block;
+    font-family: Arial;
+    text-align: center;
+  }
+
+  .hover-text:hover #top { opacity: 1; }
