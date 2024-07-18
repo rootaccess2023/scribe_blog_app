@@ -118,6 +118,46 @@ entries = [
     name: "Linda Red",
     description: "A list of the best books to read this year.",
     body: "If you love reading, here are some of the best books to dive into this year..."
+  },
+  {
+    title: "Sustainable Living Tips",
+    date: Date.new(2024, 4, 15),
+    category: "Lifestyle",
+    name: "Nancy Green",
+    description: "How to live a more sustainable life.",
+    body: "Sustainable living is important for the planet. Here are some tips to help you live more sustainably..."
+  },
+  {
+    title: "Mastering Time Management",
+    date: Date.new(2024, 5, 15),
+    category: "Personal",
+    name: "George White",
+    description: "Techniques to manage your time effectively.",
+    body: "Time management is crucial for productivity. Here’s how to master it..."
+  },
+  {
+    title: "Exploring Local Cuisine",
+    date: Date.new(2024, 6, 15),
+    category: "Food and Drinks",
+    name: "Henry Black",
+    description: "A guide to exploring and enjoying local cuisine.",
+    body: "Local cuisine offers unique flavors. Here’s how to explore and enjoy it..."
+  },
+  {
+    title: "Advancements in AI",
+    date: Date.new(2024, 7, 15),
+    category: "Technology",
+    name: "Lisa Blue",
+    description: "The latest advancements in artificial intelligence.",
+    body: "AI is rapidly advancing. Here are the latest developments..."
+  },
+  {
+    title: "Preparing for College",
+    date: Date.new(2024, 8, 15),
+    category: "Education",
+    name: "Sandra Pink",
+    description: "How to prepare for college successfully.",
+    body: "Preparing for college can be daunting. Here are some tips to make the transition smoother..."
   }
 ]
 
