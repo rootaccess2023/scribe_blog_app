@@ -12,8 +12,14 @@
     </div>
   <% end %>
   <div class="mb-2">
-    <%= link_to entries_path do %>
-      <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times"%></span>
+    <% if current_page?(new_entry_path) %>
+      <%= link_to entries_path do %>
+        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
+      <% end %>
+    <% elsif current_page?(edit_entry_path(@entry)) %>
+      <%= link_to @entry do %>
+        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
+      <% end %>
     <% end %>
   </div>
   <div class="mb-4 lg:mb-8">
@@ -37,12 +43,7 @@
   </div>
 
     <div class="flex justify-end">
-      <span>
       <%= form.submit class: "rounded-sm py-3 px-5 bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
-        <% if controller_name == 'entries' && action_name == 'edit' %>
-        <%= link_to "View Post", @entry, class: "ml-2 rounded-lg py-3 px-5 bg-blue-400 inline-block font-medium" %>
-      <% end %>
-      </span>
     </div>
   <% end %>
   </div>
