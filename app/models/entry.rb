@@ -1,4 +1,9 @@
 class Entry < ApplicationRecord
+  validates :title, presence: true
+  validates :date, presence: true
+  validates :category, presence: true
+  validates :body, presence: true
+
   def reading_time
     words_per_minute = 200.0
     text_body = self.body

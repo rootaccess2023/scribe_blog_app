@@ -1,3 +1,4 @@
+<section class="flex flex-col justify-center w-full bg-gray-200 p-6 rounded-lg shadow transition-all duration-500 lg:m-10 lg:mx-auto lg:w-2/3">
 <%= form_with(model: entry, class: "contents") do |form| %>
   <% if entry.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -10,38 +11,40 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="mb-2">
+    <% if current_page?(new_entry_path) %>
+      <%= link_to entries_path do %>
+        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
+      <% end %>
+    <% elsif current_page?(edit_entry_path(@entry)) %>
+      <%= link_to @entry do %>
+        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mb-4 lg:mb-8">
+    <%= form.text_field :title, placeholder: "Title", class: "py-4 mt-6 border-none focus:border-transparent focus:ring-0 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :date %>
-    <%= form.date_field :date, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+
+  <div class="flex flex-col gap-4 mb-4 lg:mb-8 lg:flex-row transition-all duration-500">
+    <%= form.date_field :date, class: "border-none focus:border-transparent focus:ring-0 w-full" %>
+    <%= form.select :category, options_for_select(['Health', 'Finance', 'Entertainment', 'Personal', 'Travel', 'Education', 'Food and Drinks', 'Lifestyle', 'Technology'], selected: entry.category), {}, class: "border-none focus:border-transparent focus:ring-0 w-full" %>
+    <%= form.text_field :name, placeholder: "Name (Optional)", class: "border-none focus:border-transparent focus:ring-0 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :category %>
-    <%= form.select :category, options_for_select(['Health', 'Finance', 'Entertainment', 'Personal', 'Travel', 'Education', 'Food and Drinks', 'Lifestyle', 'Technology']), {}, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+
+  <div class="mb-4 lg:mb-8 transition-all duration-500">
+    <%= form.text_area :description, placeholder: "Description", rows: 2, class: "resize-none border-none focus:border-transparent focus:ring-0 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="mb-4">
+    <%= form.text_area :body, rows: 8, placeholder: "Body", class: "resize-none border-none focus:border-transparent focus:ring-0 w-full overflow-scroll" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <div class="flex justify-end">
+      <%= form.submit class: "rounded-sm py-3 px-5 bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="my-5">
-    <%= form.label :body %>
-    <%= form.text_area :body, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
-<% end %>
+</section>
