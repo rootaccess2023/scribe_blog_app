@@ -1,4 +1,4 @@
-<section class="flex flex-col justify-center w-full bg-gray-200 p-6 rounded-lg shadow transition-all duration-500 lg:m-10 lg:mx-auto lg:w-2/3">
+<section class="z-20 h-full flex flex-col justify-center w-full bg-gray-300 p-6 shadow transition-all duration-500 lg:h-fit lg:rounded-lg lg:m-10 lg:mx-auto lg:w-2/3">
 <%= form_with(model: entry, class: "contents") do |form| %>
   <% if entry.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -12,18 +12,12 @@
     </div>
   <% end %>
   <div class="mb-2">
-    <% if current_page?(new_entry_path) %>
-      <%= link_to entries_path do %>
-        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
-      <% end %>
-    <% elsif current_page?(edit_entry_path(@entry)) %>
-      <%= link_to @entry do %>
-        <span class="sticky left-[75rem] text-2xl text-gray-400"><%= fa_icon "times" %></span>
-      <% end %>
-    <% end %>
+    <%= link_to "#", data: { controller: "modals", action: "modals#close"}, class: "sticky left-[58rem] text-xl text-gray-500 hover:text-red-400" do %>
+      <%= fa_icon "times" %>
+    <%end %>
   </div>
   <div class="mb-4 lg:mb-8">
-    <%= form.text_field :title, placeholder: "Title", class: "py-4 mt-6 border-none focus:border-transparent focus:ring-0 w-full" %>
+    <%= form.text_field :title, placeholder: "Title", class: "border border-gray-200 py-4 mt-6 border-none focus:border-transparent focus:ring-0 w-full" %>
   </div>
 
 
